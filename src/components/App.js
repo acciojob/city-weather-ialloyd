@@ -16,16 +16,16 @@ const App = () => {
       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=3fe0628f157c01d77029201efd7f9bf1&units=metric`)
         .then(data => setData({ ...data }))
         .catch(error => console.log(error))
-        searchData('')
+      searchData('')
 
     }
   }
- 
+
   return (
     <div>
       <input className="search" value={search} onChange={e => searchData(e.target.value)} onKeyDown={e => getData(e)} />
       {(Object.keys(obj).length > 0) && (
-        <div>
+        <div className="weather">
           <h1>{obj.data.name}</h1>
           <h1>{(obj.data.main.temp * 1.8 + 32).toFixed(2)}<sup>o</sup>F</h1>
           <h1>{obj.data.weather[0].main}</h1>
