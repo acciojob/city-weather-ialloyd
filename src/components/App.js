@@ -23,7 +23,7 @@ const App = () => {
  
   return (
     <div>
-      <input value={search} onChange={e => searchData(e.target.value)} onKeyDown={e => getData(e)} />
+      <input className="search" value={search} onChange={e => searchData(e.target.value)} onKeyDown={e => getData(e)} />
       {(Object.keys(obj).length > 0) && (
         <div>
           <h1>{obj.data.name}</h1>
